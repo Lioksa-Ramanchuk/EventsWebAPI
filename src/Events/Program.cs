@@ -18,6 +18,12 @@ public static class Program
             cancellationTokenSource.Cancel();
         };
 
+        var wwwrootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+        if (!Directory.Exists(wwwrootPath))
+        {
+            Directory.CreateDirectory(wwwrootPath);
+        }
+
         var builder = WebApplication.CreateBuilder(args);
 
         var appSettingsConfig = builder.Configuration.GetRequiredSection(nameof(AppSettings));
@@ -49,7 +55,7 @@ public static class Program
 
             Log.Information("Configuring web application pipeline...");
             await app.ConfigurePipelineAsync(appSettings, cancellationToken);
-            
+
             Log.Information("Server is running! (https://localhost:5001/swagger)");
             await app.RunAsync(cancellationToken);
         }

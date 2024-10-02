@@ -6,12 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <OutputType>Exe</OutputType>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
-    <DocumentationFile></DocumentationFile>
+	<EnableDefaultItems>true</EnableDefaultItems>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="logs\" />
-    <Folder Include="wwwroot\Uploads\Images\" />
+	<Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
