@@ -10,7 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Events.Tests.IntegrationTests.Application.Services.EventServiceTests;
 
 [Collection(nameof(DbCollection))]
-public class EventServiceTests(ServiceProviderFixture serviceProviderFixture) : IClassFixture<ServiceProviderFixture>
+public class EventServiceTests(ServiceProviderFixture serviceProviderFixture)
+    : IClassFixture<ServiceProviderFixture>
 {
     protected readonly IServiceProvider _serviceProvider = serviceProviderFixture.ServiceProvider;
 

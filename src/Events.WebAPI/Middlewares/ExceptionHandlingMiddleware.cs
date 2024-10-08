@@ -33,7 +33,7 @@ public class ExceptionHandlingMiddleware(ILogger<ExceptionHandlingMiddleware> lo
         };
 
         await context.Response.WriteAsJsonAsync(
-            new ErrorResponseModel(exception.Message, DateTime.UtcNow)
+            new ErrorResponseModel { ErrorMessage = exception.Message, Timestamp = DateTime.UtcNow }
         );
     }
 }

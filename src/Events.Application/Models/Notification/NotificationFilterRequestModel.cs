@@ -2,5 +2,4 @@
 
 namespace Events.Application.Models.Notification;
 
-public record NotificationFilterRequestModel(int? Offset, int? Limit)
-    : BaseFilterRequestModel(Offset, Limit);
+public class NotificationFilterRequestModel : BaseFilterRequestModel { }

@@ -146,12 +146,13 @@ public class EventService(
         {
             eventTitleForNotification += $" (now '{evt.Title}')";
         }
-        var notificationModel = new NotificationSendRequestModel(
-            Smart.Format(
+        var notificationModel = new NotificationSendRequestModel
+        {
+            Message = Smart.Format(
                 AppMessages.EventChangedNotification,
                 new { eventTitle = eventTitleForNotification }
-            )
-        );
+            ),
+        };
         await NotifyEventParticipantsAsync(eventId, notificationModel, ct);
 
         return AddEventResponseModelImageUrl(mapper.Map<EventResponseModel>(evt));
@@ -227,12 +228,13 @@ public class EventService(
             mediaService.RemoveImage(evt.ImageFileName);
         }
 
-        var notificationModel = new NotificationSendRequestModel(
-            Smart.Format(
+        var notificationModel = new NotificationSendRequestModel
+        {
+            Message = Smart.Format(
                 AppMessages.EventDeletedNotification,
                 new { eventTitle = $"'{evt.Title}'" }
-            )
-        );
+            ),
+        };
         await NotifyEventParticipantsAsync(eventId, notificationModel, ct);
 
         db.Events.Remove(evt);

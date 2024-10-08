@@ -1,3 +1,7 @@
 ﻿namespace Events.Application.Models.System;
 
-public record ErrorResponseModel(string ErrorMessage, DateTime Timestamp);
+public class ErrorResponseModel
+{
+    public string ErrorMessage { get; set; } = null!;
+    public DateTime Timestamp { get; set; }
+}

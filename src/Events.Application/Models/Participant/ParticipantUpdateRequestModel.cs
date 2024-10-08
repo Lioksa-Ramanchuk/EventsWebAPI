@@ -2,11 +2,10 @@
 
 namespace Events.Application.Models.Participant;
 
-public record ParticipantUpdateRequestModel(
-    string? Username,
-    string? Password,
-    DateOnly? BirthDate,
-    string? FirstName,
-    string? LastName,
-    string? Email
-) : AccountUpdateRequestModel(Username, Password);
+public class ParticipantUpdateRequestModel : AccountUpdateRequestModel
+{
+    public DateOnly? BirthDate { get; set; }
+    public string? FirstName { get; set; } = null!;
+    public string? LastName { get; set; } = null!;
+    public string? Email { get; set; } = null!;
+}

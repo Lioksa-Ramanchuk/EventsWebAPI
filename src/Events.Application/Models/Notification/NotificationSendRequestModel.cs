@@ -1,3 +1,6 @@
 ﻿namespace Events.Application.Models.Notification;
 
-public record NotificationSendRequestModel(string Message);
+public class NotificationSendRequestModel
+{
+    public string Message { get; set; } = null!;
+}

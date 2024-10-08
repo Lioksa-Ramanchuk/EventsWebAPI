@@ -66,12 +66,13 @@ public class EventParticipantsNotificationService(IServiceProvider serviceProvid
 
                 await notificationService.NotifyAccountsAsync(
                     unnotifiedEventParticipants.Select(ep => ep.ParticipantId),
-                    new NotificationSendRequestModel(
-                        Smart.Format(
+                    new NotificationSendRequestModel
+                    {
+                        Message = Smart.Format(
                             AppMessages.EventComingNotification,
                             new { timeLeft = $"{(evt.EventDate - now).Minutes} minutes" }
-                        )
-                    ),
+                        ),
+                    },
                     ct
                 );
 

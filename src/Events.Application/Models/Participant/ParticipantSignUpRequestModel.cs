@@ -1,10 +1,11 @@
 ﻿namespace Events.Application.Models.Participant;
 
-public record ParticipantSignUpRequestModel(
-    string Username,
-    string Password,
-    string FirstName,
-    string LastName,
-    DateOnly BirthDate,
-    string Email
-);
+public class ParticipantSignUpRequestModel
+{
+    public string Username { get; set; } = null!;
+    public string Password { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
+    public string LastName { get; set; } = null!;
+    public DateOnly BirthDate { get; set; }
+    public string Email { get; set; } = null!;
+}

@@ -1,3 +1,7 @@
 ﻿namespace Events.Application.Models.Account;
 
-public record AccountSignInRequestModel(string Username, string Password);
+public class AccountSignInRequestModel
+{
+    public string Username { get; set; } = null!;
+    public string Password { get; set; } = null!;
+}

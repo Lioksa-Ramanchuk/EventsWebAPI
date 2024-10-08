@@ -1,3 +1,6 @@
 ﻿namespace Events.Application.Models.Event;
 
-public record EventSearchRequestModel(string? Title);
+public class EventSearchRequestModel
+{
+    public string? Title { get; set; } = null!;
+}

@@ -2,11 +2,10 @@
 
 namespace Events.Application.Models.Event;
 
-public record EventFilterRequestModel(
-    DateTime? StartEventDate,
-    DateTime? EndEventDate,
-    string? Location,
-    string? Category,
-    int? Offset,
-    int? Limit
-) : BaseFilterRequestModel(Offset, Limit);
+public class EventFilterRequestModel : BaseFilterRequestModel
+{
+    public DateTime? StartEventDate { get; set; }
+    public DateTime? EndEventDate { get; set; }
+    public string? Location { get; set; }
+    public string? Category { get; set; }
+}

@@ -2,5 +2,4 @@
 
 namespace Events.Application.Models.Account;
 
-public record AccountFilterRequestModel(int? Offset, int? Limit)
-    : BaseFilterRequestModel(Offset, Limit);
+public class AccountFilterRequestModel : BaseFilterRequestModel { }

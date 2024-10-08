@@ -28,7 +28,7 @@ public static class Program
 
         var appSettingsConfig = builder.Configuration.GetRequiredSection(nameof(AppSettings));
         builder.Services.Configure<AppSettings>(appSettingsConfig);
-        
+
         var appSettings = appSettingsConfig.Get<AppSettings>()!;
 
         var logger = new LoggerConfiguration()

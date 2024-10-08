@@ -1,3 +1,7 @@
 ﻿namespace Events.Application.Models.Common;
 
-public abstract record BaseFilterRequestModel(int? Offset, int? Limit);
+public abstract class BaseFilterRequestModel
+{
+    public int? Offset { get; set; }
+    public int? Limit { get; set; }
+}
